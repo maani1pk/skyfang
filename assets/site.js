@@ -21,6 +21,28 @@ if (nav) {
     nav.classList.remove("is-open");
     toggle?.setAttribute("aria-expanded", "false");
   }));
+
+  // Scroll spy (homepage only): highlight the menu item for the section in view.
+  const spy = [...nav.querySelectorAll('.nav__links a[href^="#"]')]
+    .map(a => ({ a, el: document.getElementById(a.getAttribute("href").slice(1)) }))
+    .filter(x => x.el);
+  if (spy.length) {
+    let current = null;
+    const update = () => {
+      const line = window.scrollY + window.innerHeight * 0.35;
+      let pick = spy[0];
+      for (const s of spy) if (s.el.id !== "top" && s.el.offsetTop <= line) pick = s;
+      // At the very bottom, the last section wins even if it is short.
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) pick = spy[spy.length - 1];
+      if (pick === current) return;
+      current = pick;
+      spy.forEach(s => s.a.toggleAttribute("aria-current", s === pick));
+      pick.a.setAttribute("aria-current", "location");
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+  }
 }
 
 // ---------- App Store buttons ----------
@@ -36,11 +58,16 @@ document.querySelectorAll("[data-store]").forEach(el => {
     if (sub) sub.textContent = "Download on the";
     if (label) label.textContent = "App Store";
     el.setAttribute("aria-label", "Download Skyfang on the App Store (opens in a new tab)");
-  } else {
+  } else if (el.closest("#download")) {
+    // The button inside the download section has nowhere to go yet.
     el.removeAttribute("href");
     el.classList.add("is-soon");
     el.setAttribute("aria-disabled", "true");
     el.setAttribute("role", "link");
+  } else {
+    // Elsewhere, "coming soon" buttons take you to the download section.
+    el.classList.add("is-soon", "is-jump");
+    el.setAttribute("aria-label", "Coming soon on the App Store: go to the download section");
   }
 });
 
