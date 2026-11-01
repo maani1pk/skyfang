@@ -1,8 +1,7 @@
 /* Skyfang site behaviour: nav, App Store link, gameplay tabs, gallery lightbox, reveal-on-scroll. */
 
-// Paste the live App Store link here once the app is approved, e.g.
-// "https://apps.apple.com/app/skyfang-airplane-games/id1234567890". Empty = "Coming soon".
-const APP_STORE_URL = "";
+// Live App Store listing (released). Empty = "Coming soon".
+const APP_STORE_URL = "https://apps.apple.com/us/app/skyfang-airplane-games/id6825618120";
 
 document.documentElement.classList.remove("no-js");
 
