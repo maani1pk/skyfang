@@ -40,7 +40,16 @@
   "genre": ["Action", "Arcade", "Flight combat"],
   "gamePlatform": ["iPhone", "iPad"],
   "playMode": "SinglePlayer",
-  "author": { "@type": "Person", "name": "Abdur" }
+  "author": { "@type": "Person", "name": "Abdur Rehman Arshad", "url": "https://maani1pk.github.io/" },
+  "trailer": {
+    "@type": "VideoObject",
+    "name": "Skyfang: Airplane Games trailer",
+    "description": "Official trailer with real in-game footage of Skyfang: Airplane Games.",
+    "thumbnailUrl": "https://maani1pk.github.io/skyfang/assets/img/trailer-poster-1600.jpg",
+    "contentUrl": "https://maani1pk.github.io/skyfang/assets/video/skyfang-trailer-1080p.mp4",
+    "uploadDate": "2026-11-02",
+    "duration": "PT30S"
+  }
 }
 </script>
 <script src="assets/site.js" defer></script>
@@ -54,9 +63,10 @@
     <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span></span></button>
     <ul class="nav__links" id="nav-links">
       <li><a href="#top">Home</a></li>
+      <li><a href="#trailer">Trailer</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#screenshots">Screenshots</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#support">Support</a></li>
       <li><a href="privacy-policy.html">Privacy</a></li>
     </ul>
     <a class="store store--sm nav__cta" href="https://apps.apple.com/us/app/skyfang-airplane-games/id6825618120" target="_blank" rel="noopener noreferrer" data-store><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M12 7v7m-3-3l3 3 3-3"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
@@ -68,21 +78,21 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__media">
       <picture>
-        <source media="(max-aspect-ratio: 1/1)" srcset="assets/img/hero-portrait-900.jpg" width="900" height="1200">
-        <img src="assets/img/hero-2400.jpg" srcset="assets/img/hero-1200.jpg 1200w, assets/img/hero-2400.jpg 2400w" sizes="100vw" width="2400" height="1029" alt="A Skyfang fighter jet firing its guns low over the ocean, with islands in the distance" fetchpriority="high">
+        <source media="(max-aspect-ratio: 1/1)" srcset="assets/img/keyart-portrait-900.jpg" width="900" height="1200">
+        <img src="assets/img/keyart-2400.jpg" srcset="assets/img/keyart-1200.jpg 1200w, assets/img/keyart-2400.jpg 2400w" sizes="100vw" width="2400" height="1029" alt="A Skyfang fighter jet in flight over the ocean in the middle of a dogfight, rendered in the game engine" fetchpriority="high">
       </picture>
     </div>
     <div class="wrap">
       <div class="hero__content">
         <p class="eyebrow">Arcade air combat · iPhone &amp; iPad</p>
-        <h1 id="hero-title">Skyfang<span>Airplane Games</span></h1>
+        <h1 id="hero-title" class="hero__logo"><img src="assets/img/logo-wordmark-1200.png" width="1200" height="430" alt="Skyfang: Airplane Games"></h1>
         <p class="hero__tagline">Take the stick. Own the sky.</p>
         <p class="hero__lead">Fly a fighter jet through quick, action-packed missions. Steer with one thumb, fire with the other, lock on and launch missiles, then take down giant boss aircraft.</p>
         <div class="hero__actions">
           <a class="store" href="https://apps.apple.com/us/app/skyfang-airplane-games/id6825618120" target="_blank" rel="noopener noreferrer" data-store><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M12 7v7m-3-3l3 3 3-3"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
-          <a class="btn btn--ghost" href="#gameplay">See the gameplay</a>
+          <a class="btn btn--ghost" href="#trailer"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch the trailer</a>
         </div>
-        <p class="hero__note">Free to play · Contains ads · No account needed</p>
+        <p class="hero__note">Free to play · Contains ads · No in-app purchases · No account needed</p>
         <div class="stats" role="list">
           <div role="listitem"><b>38</b><span>Missions</span></div>
           <div role="listitem"><b>8</b><span>Themed worlds</span></div>
@@ -90,6 +100,24 @@
           <div role="listitem"><b>3</b><span>Difficulty levels</span></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Trailer -->
+  <section class="section trailer" id="trailer" aria-labelledby="trailer-title">
+    <div class="wrap">
+      <div class="head head--center reveal">
+        <p class="eyebrow">Official trailer</p>
+        <h2 id="trailer-title">Thirty seconds in the cockpit</h2>
+        <p>Real gameplay from the App Store version, plus in-engine camera shots of the same fights.</p>
+      </div>
+      <div class="trailer__frame reveal">
+        <video id="trailer-video" controls playsinline preload="none" poster="assets/img/trailer-poster-1600.jpg" width="1920" height="1080">
+          <source src="assets/video/skyfang-trailer-1080p.mp4" type="video/mp4">
+          Your browser can't play this video. <a href="assets/video/skyfang-trailer-1080p.mp4">Download the trailer (MP4)</a>.
+        </video>
+      </div>
+      <p class="trailer__note">Shots marked “In-engine camera” use a free camera around real gameplay. Everything else is exactly what you see on your phone.</p>
     </div>
   </section>
 
@@ -236,8 +264,28 @@
         <div><dt>In-app purchases</dt><dd>None</dd></div>
         <div><dt>Account</dt><dd>Not needed; progress stays on your device</dd></div>
         <div><dt>Offline</dt><dd>The game itself can be played offline</dd></div>
-        <div><dt>Developer</dt><dd>Abdur</dd></div>
+        <div><dt>Developer</dt><dd>Abdur Rehman Arshad</dd></div>
       </dl>
+    </div>
+  </section>
+
+  <!-- Support -->
+  <section class="section" id="support" aria-labelledby="support-title">
+    <div class="wrap support">
+      <div class="reveal">
+        <p class="eyebrow">Support</p>
+        <h2 class="about__title" id="support-title">Need a hand, pilot?</h2>
+        <p>Found a bug, have an idea, or need help with your progress? Email us and include your device model and iOS version.</p>
+        <p><a class="btn" href="mailto:maani1pk@gmail.com?subject=Skyfang%20support">Email support: maani1pk@gmail.com</a></p>
+        <p class="support__links"><a href="privacy-policy.html">Privacy Policy</a> · <a href="https://maani1pk.github.io/">Developer website</a></p>
+      </div>
+      <div class="faq reveal">
+        <details open><summary>Is my progress saved?</summary><p>Yes. Missions, stars, coins, aircraft and upgrades are saved on your device. There is no account, so deleting the app also deletes your progress.</p></details>
+        <details><summary>Can I play offline?</summary><p>Yes, the game itself plays offline. Ads and rewarded videos need a connection, so they simply won't appear while you're offline.</p></details>
+        <details><summary>Are there in-app purchases?</summary><p>No. Everything is unlocked with coins earned by playing. The game is free and shows ads; rewarded videos are always optional.</p></details>
+        <details><summary>A mission is too hard. What can I do?</summary><p>Switch to Easy on the mission briefing, upgrade your jet's armor and guns in the Upgrade Bay, or replay earlier missions for more coins.</p></details>
+        <details><summary>How do I change the controls?</summary><p>Open Settings from the main menu: choose a floating or fixed joystick, turn on tilt steering and adjust sensitivity.</p></details>
+      </div>
     </div>
   </section>
 
@@ -262,12 +310,13 @@
       <a class="brand" href="#top"><img src="assets/img/icon-64.png" width="36" height="36" alt="">Skyfang</a>
       <ul class="footer__links">
         <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="mailto:maani1pk@gmail.com">Support: maani1pk@gmail.com</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#support">Support</a></li>
+        <li><a href="mailto:maani1pk@gmail.com">maani1pk@gmail.com</a></li>
+        <li><a href="#trailer">Trailer</a></li>
+        <li><a href="https://maani1pk.github.io/">More from the developer</a></li>
       </ul>
     </div>
-    <p class="footer__legal">© 2026 Abdur. Skyfang: Airplane Games.<br>Apple, iPhone and iPad are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.</p>
+    <p class="footer__legal">© 2026 Abdur Rehman Arshad (Abdur Studio). Skyfang: Airplane Games. All rights reserved.<br>Apple, iPhone and iPad are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.</p>
   </div>
 </footer>
 
